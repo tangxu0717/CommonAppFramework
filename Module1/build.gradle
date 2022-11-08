@@ -1,0 +1,78 @@
+plugins {
+    //id("com.android.library")
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+if (isBuildModule.toBoolean()) {
+    //作为独立App应用运行
+    apply plugin: 'com.android.application'
+} else {
+    //作为组件运行
+    apply plugin: 'com.android.library'
+}
+
+android {
+    namespace 'com.chinasoft.module1'
+    compileSdk Versions.compile_sdk
+
+    defaultConfig {
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.chinasoft.module1"
+        }
+        minSdk Versions.min_sdk
+        targetSdk Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main {
+            if (isBuildModule.toBoolean()) {
+                //独立运行
+                manifest.srcFile 'src/main/alone/AndroidManifest.xml'
+            } else {
+                //合并到宿主
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                resources {
+                    //正式版本时，排除alone文件夹下所有调试文件
+                    exclude 'src/main/alone/*'
+                }
+            }
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(path: ':common_base')
+    implementation project(path: ':common_api')
+    implementation project(path: ':Library:common')
+    implementation project(path: ':common_res')
+
+    kapt(Dependencies.arouter_compiler)
+}

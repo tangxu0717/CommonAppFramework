@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'com.chinasoft.common'
+    compileSdk Versions.compile_sdk
+
+    defaultConfig {
+        minSdk Versions.min_sdk
+        targetSdk Versions.target_sdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api Dependencies.kotlin_core
+    api Dependencies.appcompat
+    api Dependencies.material
+    api Dependencies.constraint_layout
+    testApi Dependencies.junit
+    androidTestApi Dependencies.ext_junit
+    androidTestApi Dependencies.espresso_core
+
+    api Dependencies.arch_lifecycle
+    api Dependencies.arch_viewmodel
+    api Dependencies.arch_livedata
+    api Dependencies.arch_runtime
+
+    api Dependencies.hilt
+    kapt(Dependencies.hilt_compiler)
+
+    api Dependencies.retrofit
+    api Dependencies.converter_gson
+
+    api Dependencies.lifecycle_viewmodel
+
+    api Dependencies.permission_x
+
+    api Dependencies.arouter_api
+}

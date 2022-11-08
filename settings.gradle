@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "CommonAppFramework"
+include ':app'
+include ':common_base'
+include ':common_api'
+include ':Library:common'
+include ':Module1'
+include ':Module2'
+include ':common_res'

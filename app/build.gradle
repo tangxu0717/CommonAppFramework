@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.chinasoft.main'
+    compileSdk Versions.compile_sdk
+
+    defaultConfig {
+        applicationId "com.chinasoft.common"
+        minSdk Versions.min_sdk
+        targetSdk Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+//    implementation Dependencies.kotlin_core
+//    implementation Dependencies.appcompat
+//    implementation Dependencies.material
+//    implementation Dependencies.constraint_layout
+//    testImplementation Dependencies.junit
+//    androidTestImplementation Dependencies.ext_junit
+//    androidTestImplementation Dependencies.espresso_core
+
+    implementation project(path: ':common_base')
+    implementation project(path: ':common_api')
+    implementation project(path: ':common_res')
+    implementation project(path: ':Library:common')
+    if (!isBuildModule.toBoolean()) {
+        implementation project(path: ':Module1')
+        implementation project(path: ':Module2')
+    }
+
+    kapt(Dependencies.arouter_compiler)
+}
