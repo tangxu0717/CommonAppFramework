@@ -32,6 +32,9 @@ object Versions {
 
     //ARouter
     const val arouter = "1.5.2"
+
+    //沉浸式状态栏
+    const val immersionbar = "3.2.2"
 }
 
 object Dependencies {
@@ -61,4 +64,7 @@ object Dependencies {
 
     const val arouter_api = "com.alibaba:arouter-api:${Versions.arouter}"
     const val arouter_compiler = "com.alibaba:arouter-compiler:${Versions.arouter}"
+
+    const val immersionbar = "com.geyifeng.immersionbar:immersionbar:${Versions.immersionbar}"
+    const val immersionbar_ktx = "com.geyifeng.immersionbar:immersionbar-ktx:${Versions.immersionbar}"
 }

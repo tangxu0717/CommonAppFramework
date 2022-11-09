@@ -10,6 +10,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.chinasoft.base.mvvm.vm.BaseVM
+import com.gyf.immersionbar.ktx.immersionBar
 
 abstract class BaseActivity<V : ViewDataBinding, VM : BaseVM> : AppCompatActivity() {
     lateinit var mBinding: V
@@ -17,6 +18,7 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseVM> : AppCompatActivit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+        initImmersionBar()
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, getLayoutId())
         viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
@@ -28,6 +30,14 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseVM> : AppCompatActivit
         mBinding.lifecycleOwner = this
         initView()
         addObserver()
+    }
+
+    open fun initImmersionBar() {
+        immersionBar {
+            fitsSystemWindows(true)
+            navigationBarColor(android.R.color.white)
+            statusBarDarkFont(true)
+        }
     }
 
     @LayoutRes
