@@ -36,7 +36,6 @@ android {
 }
 
 dependencies {
-
     implementation Dependencies.kotlin_core
     implementation Dependencies.appcompat
     implementation Dependencies.material

@@ -57,8 +57,8 @@ dependencies {
     implementation project(path: ':common_res')
     implementation project(path: ':Library:common')
     if (!isBuildModule.toBoolean()) {
-        implementation project(path: ':Module1')
-        implementation project(path: ':Module2')
+        implementation project(path: ':Module:Module1')
+        implementation project(path: ':Module:Module2')
     }
 
     kapt(Dependencies.arouter_compiler)
