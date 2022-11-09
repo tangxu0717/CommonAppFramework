@@ -48,9 +48,9 @@ dependencies {
 //    implementation Dependencies.appcompat
 //    implementation Dependencies.material
 //    implementation Dependencies.constraint_layout
-//    testImplementation Dependencies.junit
-//    androidTestImplementation Dependencies.ext_junit
-//    androidTestImplementation Dependencies.espresso_core
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.ext_junit
+    androidTestImplementation Dependencies.espresso_core
 
     implementation project(path: ':common_base')
     implementation project(path: ':common_api')

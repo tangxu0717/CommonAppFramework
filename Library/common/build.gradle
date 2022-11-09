@@ -41,9 +41,9 @@ dependencies {
     api Dependencies.appcompat
     api Dependencies.material
     api Dependencies.constraint_layout
-    testApi Dependencies.junit
-    androidTestApi Dependencies.ext_junit
-    androidTestApi Dependencies.espresso_core
+//    testApi Dependencies.junit
+//    androidTestApi Dependencies.ext_junit
+//    androidTestApi Dependencies.espresso_core
 
     api Dependencies.arch_lifecycle
     api Dependencies.arch_viewmodel

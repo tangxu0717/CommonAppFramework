@@ -69,6 +69,10 @@ android {
 }
 
 dependencies {
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.ext_junit
+    androidTestImplementation Dependencies.espresso_core
+
     implementation project(path: ':common_base')
     implementation project(path: ':common_api')
     implementation project(path: ':Library:common')
