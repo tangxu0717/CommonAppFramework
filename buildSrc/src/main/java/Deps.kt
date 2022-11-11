@@ -35,6 +35,12 @@ object Versions {
 
     //沉浸式状态栏
     const val immersionbar = "3.2.2"
+
+    //Glide
+//    const val glide = "4.14.2"
+
+    //coil
+    const val coil = "2.2.2"
 }
 
 object Dependencies {
@@ -67,4 +73,9 @@ object Dependencies {
 
     const val immersionbar = "com.geyifeng.immersionbar:immersionbar:${Versions.immersionbar}"
     const val immersionbar_ktx = "com.geyifeng.immersionbar:immersionbar-ktx:${Versions.immersionbar}"
+
+//    const val glide_runtime = "com.github.bumptech.glide:glide:${Versions.glide}"
+//    const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+
+    const val coil = "io.coil-kt:coil:${Versions.coil}"
 }

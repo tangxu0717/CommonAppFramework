@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Module1</string>
+    <string name="query_str">查询</string>
+    <string name="insert_str">新增</string>
+    <string name="update_str">更新</string>
+    <string name="delete_str">删除</string>
 </resources>

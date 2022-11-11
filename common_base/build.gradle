@@ -50,4 +50,9 @@ dependencies {
 
     implementation Dependencies.immersionbar
     implementation Dependencies.immersionbar_ktx
+
+//    implementation Dependencies.glide_runtime
+//    kapt Dependencies.glide_compiler
+
+    api Dependencies.coil
 }

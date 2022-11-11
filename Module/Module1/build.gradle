@@ -69,6 +69,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.sqlite:sqlite-ktx:2.2.0'
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.ext_junit
     androidTestImplementation Dependencies.espresso_core
@@ -79,4 +80,10 @@ dependencies {
     implementation project(path: ':common_res')
 
     kapt(Dependencies.arouter_compiler)
+
+    // room
+    implementation "androidx.room:room-ktx:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+    // 展示数据 adapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
 }
