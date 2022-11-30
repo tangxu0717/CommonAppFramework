@@ -4,13 +4,14 @@ import android.content.Context
 import android.util.Log
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.chinasoft.base.CommonApp
 
 object DbManager {
     private const val dbName: String = "zroom"
 
     val db: ZRoomDB by lazy {
         Room.databaseBuilder(
-            App.app.applicationContext, ZRoomDB::class.java, dbName
+            CommonApp.app.applicationContext, ZRoomDB::class.java, dbName
         ).allowMainThreadQueries()
             .addCallback(DbCreateCallback)
             .addMigrations()

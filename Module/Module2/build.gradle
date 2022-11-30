@@ -75,7 +75,7 @@ dependencies {
 
     implementation project(path: ':common_base')
     implementation project(path: ':common_api')
-    implementation project(path: ':Library:common')
+    //implementation project(path: ':Library:common')
     implementation project(path: ':common_res')
 
     kapt(Dependencies.arouter_compiler)

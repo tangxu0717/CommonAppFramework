@@ -55,7 +55,7 @@ dependencies {
     implementation project(path: ':common_base')
     implementation project(path: ':common_api')
     implementation project(path: ':common_res')
-    implementation project(path: ':Library:common')
+    //implementation project(path: ':Library:common')
     if (!isBuildModule.toBoolean()) {
         implementation project(path: ':Module:Module1')
         implementation project(path: ':Module:Module2')

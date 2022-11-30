@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -36,17 +37,22 @@ android {
 }
 
 dependencies {
-    implementation Dependencies.kotlin_core
-    implementation Dependencies.appcompat
-    implementation Dependencies.material
+    api Dependencies.kotlin_core
+    api Dependencies.appcompat
+    api Dependencies.material
+    api Dependencies.constraint_layout
+
+    //implementation Dependencies.kotlin_core
+    //implementation Dependencies.appcompat
+    //implementation Dependencies.material
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.ext_junit
     androidTestImplementation Dependencies.espresso_core
 
-    implementation Dependencies.arch_lifecycle
-    implementation Dependencies.arch_viewmodel
-    implementation Dependencies.arch_livedata
-    implementation Dependencies.arch_runtime
+    api Dependencies.arch_lifecycle
+    api Dependencies.arch_viewmodel
+    api Dependencies.arch_livedata
+    api Dependencies.arch_runtime
 
     implementation Dependencies.immersionbar
     implementation Dependencies.immersionbar_ktx
@@ -55,4 +61,16 @@ dependencies {
 //    kapt Dependencies.glide_compiler
 
     api Dependencies.coil
+
+    api Dependencies.hilt
+    kapt(Dependencies.hilt_compiler)
+
+    api Dependencies.retrofit
+    api Dependencies.converter_gson
+
+    api Dependencies.lifecycle_viewmodel
+
+    api Dependencies.permission_x
+
+    api Dependencies.arouter_api
 }

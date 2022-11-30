@@ -1,12 +1,10 @@
 package com.chinasoft.main.activity
 
-import android.view.View
-import android.view.View.OnClickListener
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.chinasoft.base.mvvm.activity.BaseActivity
 import com.chinasoft.base.util.RouterActivityPath
-import com.chinasoft.common.BR
+import com.chinasoft.main.BR
 import com.chinasoft.main.R
 import com.chinasoft.main.databinding.ActivityMainBinding
 import com.chinasoft.main.vm.MainVM

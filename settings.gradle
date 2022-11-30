@@ -17,7 +17,7 @@ rootProject.name = "CommonAppFramework"
 include ':app'
 include ':common_base'
 include ':common_api'
-include ':Library:common'
+//include ':Library:common'
 include ':Module:Module1'
 include ':Module:Module2'
 include ':common_res'
